@@ -5,6 +5,8 @@ Here are some community links for InfluxDB people might find useful.
 
 [InfluxDB Community Showcase](https://www.influxdata.com/community-showcase/)
 
+[InfluxData Monthly Community Office Hours](https://www.influxdata.com/community-showcase/community-office-hours-registration/)
+
 [Time Series Meetup: The Virtual Edition](https://www.influxdata.com/time-series-meetup/virtual-2020/)
 
 [InfluxData Youtube Channel](https://www.youtube.com/channel/UCnrgOD6G0y0_rcubQuICpTQ)
