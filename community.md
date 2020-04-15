@@ -14,3 +14,5 @@ Here are some community links for InfluxDB people might find useful.
 [influx/days](https://www.influxdays.com/)
 
 [InfluxData Research Community Google Group ](https://groups.google.com/a/influxdata.com/forum/#!forum/research)
+
+[Third Party Links](./thirdparty.md)
