@@ -1,5 +1,5 @@
 
-Random Third Party Links Written About InfluxDB
+Random Blog Post Links Written About InfluxDB
 
 [How to Build an InfluxDB query Using Flux](https://www.factry.io/blog/influxdb-query-tutorial-and-use-case/)
 
