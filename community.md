@@ -15,4 +15,4 @@ Here are some community links for InfluxDB people might find useful.
 
 [InfluxData Research Community Google Group ](https://groups.google.com/a/influxdata.com/forum/#!forum/research)
 
-[Blog Post Links](./thirdparty.md)
+[Blog Post Links](./blog.md)
