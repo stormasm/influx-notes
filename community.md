@@ -12,3 +12,5 @@ Here are some community links for InfluxDB people might find useful.
 [InfluxDB Slack Channel](https://app.slack.com/client/TH8RGQX5Z/threads)
 
 [influx/days](https://www.influxdays.com/)
+
+[InfluxData Research Community Google Group ](https://groups.google.com/a/influxdata.com/forum/#!forum/research)
