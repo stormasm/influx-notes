@@ -69,12 +69,12 @@ https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
 
 ```
   program, err := lang.Compile(src, now, opt)
-	if err != nil {
-		t.Fatalf("failed to compile script: %v", err)
-	}
+  if err != nil {
+    t.Fatalf("failed to compile script: %v", err)
+  }
 
-	// start program in order to evaluate planner options
-	ctx := executetest.NewTestExecuteDependencies().Inject(context.Background())
+  // start program in order to evaluate planner options
+  ctx := executetest.NewTestExecuteDependencies().Inject(context.Background())
 	if _, err := program.Start(ctx, &memory.Allocator{}); err != nil {
 		t.Fatalf("failed to start program: %v", err)
 	}
