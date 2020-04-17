@@ -6,35 +6,71 @@ is the IR or Intermediate Representation the AST Abstract Syntax Tree or ASTPack
 
 https://github.com/influxdata/flux/blob/master/ast/ast.go ?
 
-##### So here is where I am getting confused:
-https://github.com/influxdata/flux/blob/master/examples/library/library_example_test.go
+## Case I
 
-examples/library/library_example_test.go
-package library_test
+From here we see:
 
-import (
-    "bytes"
-    "context"
-Show more
-
-https://github.com/influxdata/flux|influxdata/flux>influxdata/flux
-
-```
-astPkg := parser.ParseSource(t)
-the parser creates the AST
-program, err := compiler.Compile(ctx)
-the compiler creates the program and takes as input the AST
-```
-Is the astPkg the IR or is the program the IR ??
-What is the difference between the askPkg and the Program ?
-
-https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
-program, err := lang.Compile(src, now, opt)
 https://github.com/influxdata/flux/blob/master/compiler.go#L14
-// Compile produces a specification for the query.
+
+```
+// Compiler produces a specification for the query.
+type Compiler interface {
+	// Compile produces a specification for the query.
 	Compile(ctx context.Context) (Program, error)
+	CompilerType() CompilerType
+}
+```
+
 So in this case the Program which is returned from Compile is the IR ?
 
-compiler.go:14
-https://github.com/influxdata/flux|influxdata/flux>influxdata/flux
-The specification for the Query is the IR ?
+
+## Case II
+
+https://github.com/influxdata/flux/blob/master/examples/library/library_example_test.go#L19
+
+```
+
+ctx, cancelFunc := context.WithCancel(context.Background())
+	defer cancelFunc()
+
+	astPkg := parser.ParseSource(t)
+	if ast.Check(astPkg) > 0 {
+		panic(ast.GetError(astPkg))
+	}
+	compiler := lang.ASTCompiler{
+		AST: astPkg,
+	}
+
+	program, err := compiler.Compile(ctx)
+	if err != nil {
+		panic(err)
+	}
+
+	ctx = executetest.NewTestExecuteDependencies().Inject(ctx)
+	alloc := &memory.Allocator{}
+	q, err := program.Start(ctx, alloc)
+	if err != nil {
+		panic(err)
+	}
+
+```
+
+Is the astPkg the IR or is the program the IR ??
+What is the difference between the astPkg and the Program ?
+
+## Case III
+
+https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
+
+```
+  program, err := lang.Compile(src, now, opt)
+	if err != nil {
+		t.Fatalf("failed to compile script: %v", err)
+	}
+
+	// start program in order to evaluate planner options
+	ctx := executetest.NewTestExecuteDependencies().Inject(context.Background())
+	if _, err := program.Start(ctx, &memory.Allocator{}); err != nil {
+		t.Fatalf("failed to start program: %v", err)
+	}
+```
