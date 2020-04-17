@@ -34,7 +34,7 @@ https://github.com/influxdata/flux/blob/master/examples/library/library_example_
 
 ```
 
-ctx, cancelFunc := context.WithCancel(context.Background())
+  ctx, cancelFunc := context.WithCancel(context.Background())
 	defer cancelFunc()
 
 	astPkg := parser.ParseSource(t)
