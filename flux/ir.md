@@ -33,30 +33,28 @@ So in this case the Program which is returned from Compile is the IR ?
 https://github.com/influxdata/flux/blob/master/examples/library/library_example_test.go#L19
 
 ```
+ctx, cancelFunc := context.WithCancel(context.Background())
+defer cancelFunc()
 
-  ctx, cancelFunc := context.WithCancel(context.Background())
-	defer cancelFunc()
+astPkg := parser.ParseSource(t)
+if ast.Check(astPkg) > 0 {
+	panic(ast.GetError(astPkg))
+}
+compiler := lang.ASTCompiler{
+	AST: astPkg,
+}
 
-	astPkg := parser.ParseSource(t)
-	if ast.Check(astPkg) > 0 {
-		panic(ast.GetError(astPkg))
-	}
-	compiler := lang.ASTCompiler{
-		AST: astPkg,
-	}
+program, err := compiler.Compile(ctx)
+if err != nil {
+	panic(err)
+}
 
-	program, err := compiler.Compile(ctx)
-	if err != nil {
-		panic(err)
-	}
-
-	ctx = executetest.NewTestExecuteDependencies().Inject(ctx)
-	alloc := &memory.Allocator{}
-	q, err := program.Start(ctx, alloc)
-	if err != nil {
-		panic(err)
-	}
-
+ctx = executetest.NewTestExecuteDependencies().Inject(ctx)
+alloc := &memory.Allocator{}
+q, err := program.Start(ctx, alloc)
+if err != nil {
+	panic(err)
+}
 ```
 
 Is the astPkg the IR or is the program the IR ??
