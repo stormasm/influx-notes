@@ -2,9 +2,13 @@ In this document:
 
 https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md
 
-is the IR or Intermediate Representation the AST Abstract Syntax Tree or ASTPackage
+Where in our code is the IR ?
 
-https://github.com/influxdata/flux/blob/master/ast/ast.go ?
+Is the Intermediate Representation the AST ?
+
+https://github.com/influxdata/flux/blob/master/ast/ast.go
+
+Or is it the Program ? (see Case I below...)
 
 ## Case I
 
