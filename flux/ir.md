@@ -1,8 +1,10 @@
-In this document: https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md is the IR or Intermediate Representation the AST Abstract Syntax Tree or ASTPackage https://github.com/influxdata/flux/blob/master/ast/ast.go ? (edited)
+In this document:
 
-docs/CompilationExecution.md
-<https://github.com/influxdata/flux|influxdata/flux>influxdata/flux | Added by GitHub
+https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md
 
+is the IR or Intermediate Representation the AST Abstract Syntax Tree or ASTPackage
+
+https://github.com/influxdata/flux/blob/master/ast/ast.go ?
 
 ##### So here is where I am getting confused:
 https://github.com/influxdata/flux/blob/master/examples/library/library_example_test.go
@@ -14,7 +16,8 @@ import (
     "bytes"
     "context"
 Show more
-<https://github.com/influxdata/flux|influxdata/flux>influxdata/flux | Added by GitHub
+
+https://github.com/influxdata/flux|influxdata/flux>influxdata/flux
 
 ```
 astPkg := parser.ParseSource(t)
