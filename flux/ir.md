@@ -5,7 +5,7 @@ https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md
 
 *The initial representation of the query can be either a raw string or an already parsed Abstract Syntax Tree.*
 
-The AST is generated from a raw Flux String prior to the compilation step.
+Is the AST generated from a raw Flux String prior to the compilation step ?
 
 ### Where in our code is the IR (Intermediate Representation)?
 
@@ -61,8 +61,6 @@ if err != nil {
 ```
 
 The program the IR ??
-
-What is the difference between the astPkg and the Program ?
 
 ## Case III
 
