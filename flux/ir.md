@@ -1,10 +1,16 @@
+
+You can scan through your source code, parse it into an Abstract Syntax Tree (AST) then generate some abstract language (let’s call this Intermediate Representation) which LLVM can understand, LLVM says “Thanks! We’ll take it from here”.
+
 In this document:
 
 https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md
 
 Where in our code is the IR ?
 
-Is the Intermediate Representation the AST ?
+Is the Intermediate Representation the AST ?  
+
+**No its not**     
+according to the note from above...
 
 https://github.com/influxdata/flux/blob/master/ast/ast.go
 
@@ -57,7 +63,7 @@ if err != nil {
 }
 ```
 
-Is the astPkg the IR or is the program the IR ??
+The program the IR ??
 
 What is the difference between the astPkg and the Program ?
 
@@ -77,3 +83,9 @@ https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
 		t.Fatalf("failed to start program: %v", err)
 	}
 ```
+
+References:
+
+https://news.ycombinator.com/item?id=22934848
+
+https://jason-williams.co.uk/a-possible-new-backend-for-rust
