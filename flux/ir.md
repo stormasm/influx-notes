@@ -93,4 +93,4 @@ Here are some notes from the reference above:
 
 ##### Note 2
 
-In Rust, rustc is the main compiler which your source code is fed into first, it does things a typical compiler would do like generate an AST (in this context we call a High-Level Representation, or HIR for short). Once in tree-form type checking and other tasks can be performed then it’s compiled down to another representation ready for whichever backend takes it. The default backend of rustc is called rustc_codegen_llvm2 (or cg_llvm) which itself also acts as a front end to LLVM.
+*In Rust, rustc is the main compiler which your source code is fed into first, it does things a typical compiler would do like generate an AST (in this context we call a High-Level Representation, or HIR for short). Once in tree-form type checking and other tasks can be performed then it’s compiled down to another representation ready for whichever backend takes it. The default backend of rustc is called rustc_codegen_llvm2 (or cg_llvm) which itself also acts as a front end to LLVM.*
