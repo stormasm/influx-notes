@@ -1,22 +1,18 @@
 
-Here is a quote from another paper I was reading...
-
-*You can scan through your source code, parse it into an Abstract Syntax Tree (AST) then generate some abstract language (let’s call this Intermediate Representation) which LLVM can understand, LLVM says “Thanks! We’ll take it from here”.*
-
 In this document:
 
 https://github.com/influxdata/flux/blob/master/docs/CompilationExecution.md
 
-Where in our code is the IR ?
+*The initial representation of the query can be either a raw string or an already parsed Abstract Syntax Tree.*
 
-Is the Intermediate Representation the AST ?  
+The AST is generated from a raw Flux String prior to the compilation step.
 
-**No its not**     
-according to the note from above...
+### Where in our code is the IR (Intermediate Representation)?
 
-https://github.com/influxdata/flux/blob/master/ast/ast.go
+So the IR is what the compiler outputs from your picture in your
+document above...
 
-Or is it the Program ? (see Case I below...)
+So is the Program the IR ? (see Case I below...)
 
 ## Case I
 
@@ -34,7 +30,6 @@ type Compiler interface {
 ```
 
 So in this case the Program which is returned from Compile is the IR ?
-
 
 ## Case II
 
@@ -91,3 +86,7 @@ References:
 https://news.ycombinator.com/item?id=22934848
 
 https://jason-williams.co.uk/a-possible-new-backend-for-rust
+
+Here is a quote from the reference above:
+
+*You can scan through your source code, parse it into an Abstract Syntax Tree (AST) then generate some abstract language (let’s call this Intermediate Representation) which LLVM can understand, LLVM says “Thanks! We’ll take it from here”.*
