@@ -81,7 +81,7 @@ https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
 
 References:
 
-[Wasmtime](https://wasmtime.dev/)
+[Wasmtime](https://github.com/bytecodealliance/wasmtime)
 
 [Cranelift IR Reference](https://github.com/bytecodealliance/wasmtime/blob/master/cranelift/docs/ir.md)
 
