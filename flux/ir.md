@@ -81,6 +81,8 @@ https://github.com/influxdata/flux/blob/master/lang/compiler_test.go#L320
 
 References:
 
+[Cranelift IR Reference](https://github.com/bytecodealliance/wasmtime/blob/master/cranelift/docs/ir.md)
+
 https://news.ycombinator.com/item?id=22934848
 
 https://jason-williams.co.uk/a-possible-new-backend-for-rust
